@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <input (keyup)="searchName()" type="text" class="form-control my-3" [(ngModel)]="name" placeholder="جستجو کنید">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>لیست اسامی </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let value of listClass1">
+            <td >
+              {{ value.name }}
+            </td>
+          </tr>
+
+          <tr *ngIf="listClass1.length==0">
+            <td>مقداری یافت نشد</td>
+          </tr>
+
+        </tbody>
+
+
+      </table>
+    </div>
+  </div>
+</div>
+
+<router-outlet />
