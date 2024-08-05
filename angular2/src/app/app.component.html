@@ -1,0 +1,78 @@
+<span  [ngClass]="currentMonth.color" >سلام بر عاشقان ثارالله</span>
+<br>
+<span [class.red]="isMoharam" [class.success]="!isMoharam">سلام بر عاشقان ثارالله</span>
+<br>
+{{ isMoharam }}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <div class="row">
+
+        <div  class="col-6 bg-warning customTab">
+
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <ng-container *ngFor="let item of listClass;let i = index;let first=first;let last=last">
+                <button class="nav-link" [class.active]="first" [id]="'nav-tab'+i" data-bs-toggle="tab"  [attr.data-bs-target]="'nav-tab'+i" type="button" role="tab" [attr.aria-controls]="'nav-tab'+i"  aria-selected="true">{{ item.title }}</button>
+
+              </ng-container>
+
+
+
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <ng-container *ngFor="let item of listClass ;let i = index;let first=first;let last=last">
+              <div class="tab-pane fade show p-5" [class.active]="first" [id]="'nav-tab'+i" role="tabpanel" [attr.aria-labelledby]="'nav-tab'+i"   [tabindex]="i">
+                {{ item.description }}
+              </div>
+              </ng-container>
+
+
+
+          </div>
+
+
+
+        </div>
+        <div class="col-6 bg-danger">
+          <table class="table table-striped">
+            <tbody>
+                <ng-container *ngFor="let item of listClass;let index=index;let first=first">
+
+                <tr >
+                  <td [ngClass]="first ? 'bg-success':'bg-info'">
+                      {{ item.title }}
+                  </td>
+                  <td [ngClass]="first ? 'bg-success':'bg-info'">
+                    {{ item.description }}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+              </table>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="row mt-5">
+
+    <div class="col-6">
+
+
+        <label>نام کلاس</label>
+        <input type="text" class="form-control" [(ngModel)]="className">
+        <button class="btn bg-success text-light mt-2" (click)="addClass()">افزودن</button>
+
+
+    </div>
+  </div>
+</div>
+<router-outlet />
