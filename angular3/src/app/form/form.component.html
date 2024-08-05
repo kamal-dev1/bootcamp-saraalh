@@ -1,0 +1,18 @@
+<p *ngIf="error!=''" class="alert bg-danger">{{ error }}</p>
+<form [formGroup]="form">
+    <div class="row">
+      <div class="col-6">
+        <label>نام و نام خانوادگی</label>
+    <input type="text" class="form-control" formControlName="name">
+      </div>
+      <div class="col-6">
+        <label>موبایل</label>
+        <input type="text" class="form-control" formControlName="mobile">
+      </div>
+
+
+
+      <button type="submit"  (click)="submitForm()" class="btn btn-info m-5">ثبت</button>
+  </div>
+  </form>
+
