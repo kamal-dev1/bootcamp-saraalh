@@ -1,0 +1,28 @@
+<input type="text" (keyup)="submitForNgmodel()" [(ngModel)]="name">
+
+<form [formGroup]="form" >
+  <input type="text" formControlName="name">
+
+
+  <div formArrayName="items">
+    <div *ngFor="let item of mobiles.controls;let index=index;let first=first"  >
+      <div class="row justify-content-center"  [formGroupName]="index">
+       <div class="col-6">
+         <div class="input-group mb-3">
+           <div class="input-group-prepend">
+             <button class="btn btn-danger" (click)="addItem()" type="button">+</button>
+             <button class="btn btn-info" *ngIf="!first"  (click)="removeItem(index)" type="button">-</button>
+           </div>
+           <input type="text" class="form-control" formControlName="mobile" placeholder="">
+           <input type="text" class="form-control" formControlName="telphone" placeholder="" >
+         </div>
+       </div>
+      </div>
+
+
+     </div>
+  </div>
+
+
+  <button (click)="submit()" type="submit">ثبت</button>
+</form>

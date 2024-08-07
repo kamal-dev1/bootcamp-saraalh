@@ -18,6 +18,7 @@ export class AppComponent {
     this.appService.addClass({
       "name":"jsdfhksdjfh"
     })
+    this.appService.name3
     console.log(this.listClass1);
   }
   ngOnInit() {

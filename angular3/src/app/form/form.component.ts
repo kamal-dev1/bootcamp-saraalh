@@ -22,7 +22,7 @@ export class FormComponent {
   error:string=""
   submitForm(){
     console.log(this.form?.value);
-    if (!this.form.valid) {
+    if (this.form.invalid) {
       this.error="نام اشتباه است"
 
 

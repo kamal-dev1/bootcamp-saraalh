@@ -6,6 +6,11 @@ import { Injectable } from '@angular/core';
 export class AppService {
   private name:string="jksdfhjksdfh"
    name1:string="salam"
+
+
+   get name3(){
+    return this.name
+   }
   constructor() {
     // setInterval(() =>{
     //   this.listClass.push({
