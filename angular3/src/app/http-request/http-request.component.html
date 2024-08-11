@@ -1,1 +1,37 @@
-<p>http-request works!</p>
+
+<table class="table table-striped">
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td>{{ item.description }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-striped">
+  <tbody>
+    <tr *ngFor="let item of showData1">
+      <td>{{ item }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-striped">
+  <tbody>
+    <tr *ngFor="let item of showData2">
+      <td>{{ item }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="row">
+  <div class="col-6">
+    <select (change)="getShahrestan($event)">
+      <option *ngFor="let item of this.ostans" [value]="item.id">{{ item.name }}</option>
+    </select>
+  </div>
+  <div class="col-6">
+    <select >
+      <option *ngFor="let item of this.shahrestans" value="">{{ item.name }}</option>
+    </select>
+  </div>
+</div>

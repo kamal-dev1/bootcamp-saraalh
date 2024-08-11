@@ -13,6 +13,7 @@ import { AppService } from './app.service';
 })
 export class AppComponent {
   constructor(private appService: AppService){
+
     this.getDataClass()
     console.log(this.listClass1);
     this.appService.addClass({
