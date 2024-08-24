@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <input (keyup)="changeFirstname()" type="text" [(ngModel)]="firstname">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 bg-info">
+      <span *ngIf="firstname=='salam'">{{ firstname }}</span>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <tbody>
+          <tr *ngFor="let item of listName">
+            <!-- <td>
+              <span *ngIf="item=='hasan'"><span class="text-info my-3">{{ item }}</span></span>
+              <span *ngIf="item!='hasan'"><span class="text-danger my-3">{{ item }}</span></span>
+            </td> -->
+            <!-- <td>
+              <span [class.text-info]="item=='hasan'" [class.text-danger]="item!='hasan'" >{{ item }}</span>
+
+            </td> -->
+            <td>
+              <span [ngClass]="{'text-info': item=='hasan','text-danger':item!='hasan'}" >{{ item }}</span>
+
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="form">
+
+        <input type="text" [ngClass]="{'borderRed': submited && this.form.get('firstname').invalid}" class="form-control" formControlName="firstname" placeholder="نام">
+        <input type="text" class="form-control" formControlName="lastname" placeholder="نام خانوادگی">
+        <button class="btn btn-info" type="submit" [disabled]="this.form.invalid" (click)="submit()">ثبت</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
