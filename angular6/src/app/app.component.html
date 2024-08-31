@@ -1,0 +1,95 @@
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12 customTab">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">ثبت نام</button>
+          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">نمایش</button>
+
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+          <form [formGroup]="form">
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group">
+                  <label>نام</label>
+                  <input type="text" formControlName="name" class="form-control">
+                  <ng-container *ngIf="form.get('name').invalid && submitted">
+                    <span class="hint" *ngIf="form.get('name').errors.required">پر کردن این فیلد ضروری می باشد</span>
+
+                  </ng-container>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label>نام خانوادگی</label>
+                  <input type="text" formControlName="lastname" class="form-control">
+                  <ng-container *ngIf="form.get('lastname').invalid && submitted">
+                    <span class="hint" *ngIf="form.get('lastname').errors.required">پر کردن این فیلد ضروری می باشد</span>
+                  </ng-container>
+
+
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label>موبایل</label>
+                  <input type="text" formControlName="mobile" class="form-control">
+                  <ng-container *ngIf="form.get('mobile').invalid && submitted">
+                    <span class="hint" *ngIf="form.get('mobile').errors.required">پر کردن این فیلد ضروری می باشد</span>
+                  </ng-container>
+                  <ng-container *ngIf="hasMobileError && submitted">
+                    <span class="hint" >موبایل شما نامعتبر می باشد </span>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success" (click)="submite()">ثبت</button>
+          </form>
+
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+          <div class="row">
+            <div class="col-6">
+              <table class="table table-striped">
+                <tbody>
+                  <tr *ngFor="let item of listData;let index=index">
+                    <td (click)="send(index)">
+                      <span>{{item.name}} </span>
+                      <span>{{item.lastname  }} </span>
+                      <small class="badge bg-info mx-5">{{item.mobile  }}</small>
+                      <i class="text-dark mr-5">--></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-6">
+              <table class="table table-striped">
+                <tbody>
+                  <tr *ngFor="let item of listData2">
+                    <td>
+                      <span>{{item.name}} </span>
+                      <span>{{item.lastname  }} </span>
+                      <small class="badge bg-info mx-5">{{item.mobile  }}</small>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<router-outlet />

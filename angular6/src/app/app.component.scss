@@ -1,0 +1,22 @@
+.customTab .nav-tabs .nav-item.show .nav-link,  .customTab .nav-tabs .nav-link.active{
+  background-color: rgb(100, 198, 76) !important;
+}
+
+.customTab .nav-tabs .nav-link{
+  background-color: aliceblue !important;
+}
+
+.form-group{
+  position: relative;
+}
+
+.hint{
+  position: absolute;
+  left: 0;
+  bottom: -26px;
+  padding: 3px 6px;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
