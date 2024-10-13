@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-12">
+    <div class="row mb-5" *ngIf="error">
+      <div class="col-lg-6 col-12">
+        <span class="alert bg-danger text-white">{{ error }}</span>
+
+      </div>
+    </div>
+    <div class="row mb-5" *ngIf="message">
+      <div class="col-lg-6 col-12">
+        <span class="alert bg-success text-white">{{ this.message }}</span>
+
+      </div>
+    </div>
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-lg-3 col-6">
+          <label >عنوان وظیفه</label>
+          <input type="text" class="form-control" formControlName="title">
+        </div>
+        <div class="col-lg-3 col-6">
+          <label >کاربر انجام دهنده</label>
+          <select class="form-control" formControlName="assign_user_id">
+            <option value="">انتخاب کنید</option>
+            <option *ngFor="let item of listUser" [value]="item.id">{{ item.name }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-6 col-12">
+          <label>توضیحات</label>
+          <textarea formControlName="description" class="form-control"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success mt-3" (click)="addTask()">ثبت وظیفه</button>
+
+    </form>
+  </div>
+</div>

@@ -5,7 +5,10 @@
 */tmp
 /out-tsc
 /bazel-out
-
+vendor
+/vendor
+*/vendor
+**/vendor
 # Node
 node_modules
 /node_modules

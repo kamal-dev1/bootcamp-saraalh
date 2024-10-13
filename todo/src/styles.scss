@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: 500;
+  src: url("public/Font/iransans/eot/IRANSansWeb_Medium.eot");
+  src: url("public/Font/iransans/eot/IRANSansWeb_Medium.eot?#iefix") format("embedded-opentype"),
+  /* IE6-8 */ url("public/Font/iransans/woff2/IRANSansWeb_Medium.woff2") format("woff2"),
+  /* FF39+,Chrome36+, Opera24+/ url("/assets/Font/iransans/woff/IRANSansWeb_Medium.woff") format("woff"),
+  / FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("public/Font/iransans/ttf/IRANSansWeb_Medium.ttf") format("truetype");
+  }
+
+body{
+  direction: rtl;
+  font-family: IRANSans;
+}

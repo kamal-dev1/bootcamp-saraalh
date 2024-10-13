@@ -32,6 +32,10 @@ export class AppComponent {
       })
   });
 
+    this.appService.sendData({
+      "mobile":"09193433401",
+
+    })
   }
   listData:any[]=[]
   listData2:any[]=[]
